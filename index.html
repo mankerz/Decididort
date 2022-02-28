@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="necestias tirar la moneda? lanza una moneda virtual."
+    />
+    <meta
+      name="keywords"
+      content="azar, juego azar, tirar una moneda, moneda, como tirar una moneda gratis, como lanzar una moneda virtual, monedagif, monedas animadas, tirar una moneda al aire, moneda que gira, girar la moneda, lanzar una moneda, lanzar moneda, nones, pares, moneda virtual, elecciones azar, decidir, cara, cruz, canto"
+    />
+    <title>A la Suerte...</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8328599623824075"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8328599623824075"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>DECIDITE..</h1>
+      <p>Dos opciones un resultado, ¿Es lo que querias?</p>
+    </header>
+    <div class="container">
+      <input type="text" id="verdadero" placeholder="opcion 1" />
+      <input type="text" placeholder="opcion 2" id="falso" />
+
+      <button id="btn">Decidir</button>
+      <div class="container_resultado">
+        <img src="" id="image" alt="" />
+        <div id="txt">Preciona el Boton</div>
+      </div>
+    </div>
+    <!-- <section class="links">
+      <a href="3op.html">3 opciones</a>
+      <a href="4op.html">4 opciones</a>
+      <a href="5op.html">5 opciones</a>
+      <a href="6op.html">6 opciones</a>
+    </section> -->
+    <footer>
+      Created by: <a href="manusanchez.xyz" target="_blank"> Manu Sanchez</a>
+    </footer>
+    <script>
+      var boton = document.getElementById("btn");
+      var imagen = document.getElementById("image");
+      var txt = document.getElementById("txt");
+
+      var opcionUno = document.getElementById("verdadero");
+      var opcionDos = document.getElementById("falso");
+
+      var moneda;
+      var suerte = (max, min) => {
+        return Math.round(Math.random() * (max - min) + min);
+      };
+
+      boton.addEventListener("click", () => {
+        setTimeout(function () {
+          var resultado = suerte(1, 0);
+          if (resultado === 1) {
+            txt.innerHTML = opcionUno.value;
+            imagen.src = ";"
+          } else {
+            txt.innerHTML = opcionDos.value;
+            imagen.src = ";"
+          }
+        }, 1500);
+        imagen.src = "img/loading.gif";
+        txt.innerHTML = "Pensando..";
+      });
+    </script>
+  </body>
+</html>
